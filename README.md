@@ -1,36 +1,128 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Next.js Task
 
-## Getting Started
+This is a real-time chat application built using **Next.js**, **Firebase**, and **WebSockets**. It includes features like authentication, live user updates, and more. This project is designed as part of a learning experience to integrate various technologies and build a real-time communication platform.
 
-First, run the development server:
+## Features
+
+- **Authentication**: User authentication using Firebase Authentication.
+- **Real-time Communication**: WebSocket integration for live messaging and updates.
+- **Light/Dark Mode**: Toggle between light and dark themes using `next-themes`.
+- **User Analytics**: Track the number of active users in real-time.
+
+---
+
+## 📁 Project Structure
+
+```
+src/
+  app/
+    dashboard/
+      page.tsx
+    login/
+      page.tsx
+    globals.css
+    layout.tsx
+    page.tsx
+  components/
+    ActiveUsersChart.tsx
+    Chat.tsx
+    ThemeToggle.tsx
+  lib/
+    firebase.ts
+    websocket.tsx
+  providers/
+server.ts
+```
+
+- **`app/`**: Main application pages (dashboard, login, global layout).
+- **`components/`**: Reusable UI components like Chat box, Theme toggler, and Active Users Chart.
+- **`lib/`**: Firebase and WebSocket logic files.
+- **`server.ts`**: Standalone WebSocket server running on port 3001.
+
+---
+
+## ⚙️ Installation & Setup
+
+1. **Clone the Repository**
+
+   ```bash
+   git clone https://github.com/madhav182004/next-js-task.git
+   cd next-js-task
+   ```
+
+2. **Install Dependencies**
+
+   ```bash
+   npm install
+   ```
+
+3. **Configure Environment Variables**
+
+   Create a `.env.local` file in the root and paste the following:
+
+   ```bash
+   NEXT_PUBLIC_FIREBASE_API_KEY=YOUR_NEXT_PUBLIC_FIREBASE_API_KEY
+   NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=YOUR_NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN
+   NEXT_PUBLIC_FIREBASE_PROJECT_ID=YOUR_NEXT_PUBLIC_FIREBASE_PROJECT_ID
+   NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=YOUR_NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET
+   NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=YOUR_NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID
+   NEXT_PUBLIC_FIREBASE_APP_ID=YOUR_NEXT_PUBLIC_FIREBASE_APP_ID
+   NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID=YOUR_NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID
+   ```
+
+---
+
+## 🚀 Running the Project
+
+There are **two servers** that need to be started separately:
+
+### 1. Start the Next.js Frontend
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Runs the frontend on [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 2. Start the WebSocket Server
 
-## Learn More
+```bash
+npm run ws
+```
 
-To learn more about Next.js, take a look at the following resources:
+- Runs the WebSocket server on [http://localhost:3001](http://localhost:3001).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📜 Available Scripts
 
-## Deploy on Vercel
+| Command       | Description                          |
+| ------------- | ------------------------------------ |
+| `npm run dev` | Runs the Next.js development server  |
+| `npm run ws`  | Runs the WebSocket server on port 3001 |
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🛠️ Technologies Used
+
+- Next.js (App Router)
+- React.js
+- TypeScript
+- WebSocket
+- Firebase
+- Tailwind CSS
+
+---
+
+## 🔥 Important Notes
+
+- Both servers must be running simultaneously for the app to function properly.
+- Environment variables must be set correctly before running the project.
+
+---
+
+## 📄 License
+
+This project is created for educational purposes.
