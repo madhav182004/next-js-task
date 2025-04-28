@@ -123,6 +123,14 @@ npm run ws
 
 ---
 
+## 🙋‍♂️ Author
+
+**Madhav**
+
+- 🐙 [GitHub](https://github.com/madhav182004)
+
+---
+
 ## 📄 License
 
 This project is created for educational purposes.
